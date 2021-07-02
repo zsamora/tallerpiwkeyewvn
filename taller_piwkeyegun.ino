@@ -1,6 +1,6 @@
 // Librerias
 #include <ESP8266WiFi.h>
-#include <dht.h>
+#include <DHTStable.h>
 #include <BlynkSimpleEsp8266.h>
 
 // Constantes
@@ -9,7 +9,7 @@ const int WaterValue = 285;  // Sensor capacitivo en agua
 
 // Sensores y pines utilizados
 #define DHT_pin D0
-dht DHT;
+DHTStable DHT;
 const int moisture_pin = A0;
 
 // Credenciales Blynk
@@ -20,7 +20,7 @@ const char* password = "PASSWORD_WIFI";            // Password
 BlynkTimer timer;
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   // Establecer el pin del sensor como entrada
   pinMode(moisture_pin, INPUT);  
   // Conexión a servidor Blynk
